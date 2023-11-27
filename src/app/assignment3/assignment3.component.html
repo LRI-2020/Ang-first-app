@@ -13,5 +13,5 @@
 
 <!--Get index with angular reserved keyword-->
   <div *ngFor="let log of logs; let i = index;">
-    <p [ngStyle]="{backgroundColor: i === 2? 'blue':''}" [ngClass]="{white:i === 2}">{{log}}</p>
+    <p [ngStyle]="{backgroundColor: i >= 2? 'blue':''}" [ngClass]="{white:i >= 2}">{{log}}</p>
   </div>
