@@ -7,6 +7,11 @@
 
 <button class="btn btn-dark" [disabled]="displayDetails" (click)="onDisplayDetails()"> Display Details</button>
 <p [ngClass]="{'d-none': !displayDetails}"> this is my details</p>
-<div *ngFor="let log of logs">
-  <p [ngStyle]="{backgroundColor: logs.indexOf(log) === 2? 'blue':''}" [ngClass]="{white:logs.indexOf(log) === 2}">{{log}}</p>
-</div>
+<!--<div *ngFor="let log of logs">-->
+<!--  <p [ngStyle]="{backgroundColor: logs.indexOf(log) === 2? 'blue':''}" [ngClass]="{white:logs.indexOf(log) === 2}">{{log}}</p>-->
+<!--</div>-->
+
+<!--Get index with angular reserved keyword-->
+  <div *ngFor="let log of logs; let i = index;">
+    <p [ngStyle]="{backgroundColor: i === 2? 'blue':''}" [ngClass]="{white:i === 2}">{{log}}</p>
+  </div>
