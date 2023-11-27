@@ -5,23 +5,7 @@
   <title>Server Component</title>
 </head>
 <body>
-<!--data binding-->
-<!--<input class="form-control" type="text" (input)="onSetServerName($event)">-->
-<!--two ways biding-->
-<input class="form-control" type="text" [(ngModel)]="serverName">
-<button [disabled]="!allowServerCreation" (click)="onCreateServer()"> Add new Server</button>
-<p> you have {{servers.length}} servers running</p>
-<h2>My Servers</h2>
-<ul class="servers">
-  <li *ngFor="let server of servers">
-      <span class="name">{{server}}</span>
-  </li>
-</ul>
-
-<!--TUTORIEL Challenge-->
-<input name="serverId" type="text" [(ngModel)]="clusterId">
-<button [disabled]="!isValidId()" (click)="onResetClusterId()"> Reset cluster Id</button>
-<p>This is the server Id {{clusterId}}</p>
+<p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online:getServerStatus() === 'online'}"> Server Id {{serverId}} is {{getServerStatus()}}</p>
 
 </body>
 </html>

@@ -1,2 +1,21 @@
-<h1>app-servers works!</h1>
-<app-server></app-server>
+<!--<input type="text" class="form-control m-2" (input)="onUpdateServerName($event)">-->
+<!--<p>{{serverName}}</p>-->
+<div class="m-3">
+  <input type="text" class="form-control my-1" [(ngModel)]="serverName">
+  <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Create Server</button>
+  <div class="">
+    <p *ngIf="serverCreated; else noServer">Server Created. Server Name is {{serverName}}</p>
+    <ng-template #noServer> <p>No server Created</p></ng-template>
+  </div>
+
+</div>
+
+<!--<p class="serverCreationStatus"> {{serverCreattionStatus}}</p>-->
+
+<app-server *ngFor="let server of servers"></app-server>
+
+<div class="m-3">
+  <input type="text" [(ngModel)]="userName">
+  <p> Username is {{userName}}</p>
+  <button class="btn btn-primary" (click)="onResetUserName()">Reset Username</button>
+</div>

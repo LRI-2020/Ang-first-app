@@ -9,15 +9,15 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "ES2022",
-    "module": "ES2022",
+    "target": "ES2016",
+    "module": "ESNext",
     "useDefineForClassFields": false,
     "strict": true,
     "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
         "lib": [
-      "ES2022",
+      "ES2016",
       "dom"
     ]
   },
