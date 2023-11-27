@@ -1,0 +1,12 @@
+
+<h1 class="text-center">assignment3 - Directives</h1>
+
+<!--<button class="btn btn-dark" (click)="onDisplayDetails()"> Display Details</button>-->
+<!--<p *ngIf="displayDetails"> this is my paragraph</p>-->
+
+
+<button class="btn btn-dark" [disabled]="displayDetails" (click)="onDisplayDetails()"> Display Details</button>
+<p [ngClass]="{'d-none': !displayDetails}"> this is my details</p>
+<div *ngFor="let log of logs">
+  <p [ngStyle]="{backgroundColor: logs.indexOf(log) === 2? 'blue':''}" [ngClass]="{white:logs.indexOf(log) === 2}">{{log}}</p>
+</div>
