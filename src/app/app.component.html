@@ -1,4 +1,4 @@
-<app-game-control (onIntervalFired)="addNumber($event)"></app-game-control>
+<app-game-control (onIntervalFired)="addNumber($event)" (onGameReset)="ResetNumbers()"></app-game-control>
 <div class="row">
   <div class="col-5">
     <app-odd *ngFor="let odd of odds" [oddNumber]="odd"></app-odd>

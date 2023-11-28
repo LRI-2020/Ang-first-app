@@ -1,7 +1,4 @@
 import {Component, Output} from '@angular/core';
-import {ServerComponent} from "./server/server.component";
-import * as events from "events";
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,6 +23,11 @@ addNumber(value:number){
       this.odds.push(value);
     }
 }
+
+  ResetNumbers(){
+    this.evens=[]
+    this.odds=[]
+  }
 
 
 
