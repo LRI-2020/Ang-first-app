@@ -1,21 +1,18 @@
-<!--<input type="text" class="form-control m-2" (input)="onUpdateServerName($event)">-->
-<!--<p>{{serverName}}</p>-->
-<div class="m-3">
-  <input type="text" class="form-control my-1" [(ngModel)]="serverName">
-  <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Create Server</button>
-  <div class="">
-    <p *ngIf="serverCreated; else noServer">Server Created. Server Name is {{serverName}}</p>
-    <ng-template #noServer> <p>No server Created</p></ng-template>
+
+<div class="m-3 row">
+  <div class="col-sm-8">
+    <label for="serverNameInput">Name of server : </label>
+    <input  id="serverNameInput" type="text" class="form-control my-1" #serverNameInput>
+    <label for="serverStatusInput">Server online : </label>
+    <input type="checkbox" id="serverStatusInput" class="form-check my-1" #serverStatusInput>
+    <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer(serverNameInput)">Create Server</button>
+    <div class="">
+      <p *ngIf="serverCreated;"> {{serverCreationStatus}}</p>
+    </div>
   </div>
 
+
 </div>
 
-<!--<p class="serverCreationStatus"> {{serverCreattionStatus}}</p>-->
 
-<app-server *ngFor="let server of servers"></app-server>
-
-<div class="m-3">
-  <input type="text" [(ngModel)]="userName">
-  <p> Username is {{userName}}</p>
-  <button class="btn btn-primary" (click)="onResetUserName()">Reset Username</button>
-</div>
+<app-server *ngFor="let server of servers" [serverElement]="{name:server.name,status:server.status,id:server.id}"></app-server>

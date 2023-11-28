@@ -5,7 +5,15 @@
   <title>Server Component</title>
 </head>
 <body>
-<p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online:getServerStatus() === 'online'}"> Server Id {{serverId}} is {{getServerStatus()}}</p>
+<div class="row">
+  <div class="col-sm-6">
+    <h5>{{serverElement.name}}</h5>
+    <div class="d-flex flex-inline justify-content-evenly">
+      <p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online:serverElement.status}"> Server Id {{serverElement.id}} is {{getStatus()}}</p>
+      <button class="btn btn-primary" (click)="changeStatus()">Change Server status</button>
+    </div>
+ </div>
+</div>
 
 </body>
 </html>

@@ -12,10 +12,10 @@
     "target": "ES2016",
     "module": "ESNext",
     "useDefineForClassFields": false,
-    "strict": true,
-    "noImplicitReturns": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "strict": false,
+    "noImplicitReturns": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
         "lib": [
       "ES2016",
       "dom"

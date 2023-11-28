@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
-import {ServerComponent} from "../server/server.component";
+import {Component, ElementRef, EventEmitter, Input, ViewChild} from '@angular/core';
+import {v4 as uuidv4} from "uuid";
+
 
 @Component({
   selector: 'app-servers',
@@ -9,34 +10,30 @@ import {ServerComponent} from "../server/server.component";
 export class ServersComponent {
 
   allowNewServer = false;
-  serverCreattionStatus = 'no server was created';
-  serverName = 'Test initial name';
-  userName = 'JohnDoe';
+  serverCreationStatus = 'no server was created';
+  @ViewChild('serverStatusInput') serverStatusInput:ElementRef;
   serverCreated = false;
-  servers:string[] = [];
+  servers: {name:string,id:string,status:boolean}[] = [];
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
     }, 2000);
   }
 
-  onCreateServer() {
+  onCreateServer(nameInput: HTMLInputElement) {
+    let name = nameInput.value;
+    this.servers.push({name:name, id:uuidv4(), status:this.serverStatusInput.nativeElement.checked});
+    this.setCreatedStatus();
+    this.serverCreationStatus = `server was created. Server name is ${name}`;
+  }
+
+  setCreatedStatus(){
     this.serverCreated=true;
-    this.serverCreattionStatus = 'server was created. Server name is ' + this.serverName;
-    this.servers.push(this.serverName);
-  }
-
-  onUpdateServerName(event: Event) {
-
-    this.serverName = (<HTMLInputElement>event.target).value;
+    setTimeout(()=>{
+      this.serverCreated=false;
+    },2000);
 
   }
 
-  onResetUserName(){
-
-    if(this.userName.length>0){
-      this.userName='';
-    }
-  }
 
 }

@@ -1,28 +1,31 @@
-﻿import {Component, Injectable, Input} from '@angular/core';
+﻿import {Component, EventEmitter, Injectable, Input, OnInit} from '@angular/core';
 import {NgFor} from "@angular/common";
+import {Server} from "./server.model";
 
 @Component({
   selector: 'app-server',
-  templateUrl:'./server.component.html',
-  styleUrl:'./server.component.scss'
+  templateUrl: './server.component.html',
+  styleUrl: './server.component.scss'
 })
-export class ServerComponent{
+export class ServerComponent implements OnInit {
+  @Input()serverElement: { name: string; status: boolean; id: string; };
 
-  serverId: number=10;
-  serverStatus:string = '';
-
-  constructor() {
-    this.serverStatus = Math.random()>0.5?'online':'offline';
+  ngOnInit(): void {
   }
 
-    getServerStatus(){
-      return this.serverStatus;
-    }
 
-    getColor(){
 
-    return this.serverStatus === 'online'? 'green':'red';
-    }
+  getColor() {
+    return this.serverElement.status ? 'green' : 'red';
+  }
+
+  getStatus(){
+    return this.serverElement.status ? 'online' : 'offline';
+  }
+
+  changeStatus(){
+    this.serverElement.status = !this.serverElement.status;
+  }
 
 
 }
