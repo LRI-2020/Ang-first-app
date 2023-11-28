@@ -1,5 +1,5 @@
-<app-servers></app-servers>
 <app-game-control (onGameStarted)="StartInterval($event)" (onGameStopped)="StopInterval()"></app-game-control>
+<h4 *ngIf="displayGameId">Game number {{gameId}}</h4>
 <div *ngFor="let counter of counters" >
   <app-odd *ngIf="counter%2!==0" [CounterReceived]="counter"></app-odd>
   <app-even *ngIf="counter%2===0" [CounterReceived]="counter"></app-even>

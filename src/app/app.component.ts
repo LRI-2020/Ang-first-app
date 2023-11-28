@@ -9,12 +9,17 @@ import {ServerComponent} from "./server/server.component";
 export class AppComponent {
   @Output('counter') counters: number[];
   intervalID: number;
+  gameId:number;
+  displayGameId=false;
 
   constructor() {
     this.counters=[];
+    this.gameId=0;
   }
 
   StartInterval(counter: number) {
+    this.gameId++;
+    this.displayGameId=true;
     this.intervalID = setInterval(() => {
       counter++;
       this.counters.push(counter);
@@ -26,8 +31,11 @@ export class AppComponent {
 
   StopInterval() {
     clearInterval(this.intervalID);
-    console.log("Interval ID cleared: " + this.intervalID);
+    this.counters=[];
+    this.displayGameId=false;
 
+    console.log("Interval ID cleared: " + this.intervalID);
   }
+
 
 }

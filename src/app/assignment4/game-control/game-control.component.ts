@@ -21,4 +21,5 @@ onStopGame(){
   this.onGameStopped.emit();
 }
 
+
 }
