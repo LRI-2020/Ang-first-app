@@ -6,5 +6,5 @@ import {Component, Input} from '@angular/core';
   styleUrl: './odd.component.scss'
 })
 export class OddComponent {
-@Input() CounterReceived:number;
+@Input() oddNumber:number;
 }

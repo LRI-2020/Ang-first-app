@@ -6,5 +6,5 @@ import {Component, Input} from '@angular/core';
   styleUrl: './even.component.scss'
 })
 export class EvenComponent {
-@Input() CounterReceived:number
+@Input() evenNumber:number
 }

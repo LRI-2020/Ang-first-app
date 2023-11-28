@@ -1,5 +1,6 @@
 import {Component, Output} from '@angular/core';
 import {ServerComponent} from "./server/server.component";
+import * as events from "events";
 
 @Component({
   selector: 'app-root',
@@ -8,34 +9,24 @@ import {ServerComponent} from "./server/server.component";
 })
 export class AppComponent {
   @Output('counter') counters: number[];
-  intervalID: number;
-  gameId:number;
-  displayGameId=false;
+  evens: number[];
+  odds:number[];
 
   constructor() {
-    this.counters=[];
-    this.gameId=0;
+    this.evens=[];
+    this.odds=[];
   }
 
-  StartInterval(counter: number) {
-    this.gameId++;
-    this.displayGameId=true;
-    this.intervalID = setInterval(() => {
-      counter++;
-      this.counters.push(counter);
-      console.log("counter : " + counter);
-    }, 1000);
-    console.log("Interval ID started: " + this.intervalID);
 
-  }
+addNumber(value:number){
+    if(value%2===0){
+      this.evens.push(value);
+    }
+    else{
+      this.odds.push(value);
+    }
+}
 
-  StopInterval() {
-    clearInterval(this.intervalID);
-    this.counters=[];
-    this.displayGameId=false;
-
-    console.log("Interval ID cleared: " + this.intervalID);
-  }
 
 
 }

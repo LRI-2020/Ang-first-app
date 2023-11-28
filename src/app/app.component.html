@@ -1,8 +1,13 @@
-<app-game-control (onGameStarted)="StartInterval($event)" (onGameStopped)="StopInterval()"></app-game-control>
-<h4 *ngIf="displayGameId">Game number {{gameId}}</h4>
-<div *ngFor="let counter of counters" >
-  <app-odd *ngIf="counter%2!==0" [CounterReceived]="counter"></app-odd>
-  <app-even *ngIf="counter%2===0" [CounterReceived]="counter"></app-even>
+<app-game-control (onIntervalFired)="addNumber($event)"></app-game-control>
+<div class="row">
+  <div class="col-5">
+    <app-odd *ngFor="let odd of odds" [oddNumber]="odd"></app-odd>
+
+  </div>
+  <div class="col-5">
+    <app-even *ngFor="let even of evens" [evenNumber]="even"></app-even>
+
+  </div>
 </div>
 
 <!--<app-assignment3></app-assignment3>-->
