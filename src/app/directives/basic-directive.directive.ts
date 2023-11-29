@@ -1,4 +1,4 @@
-import {Directive, ElementRef, OnInit, Renderer2} from '@angular/core';
+import {Directive, ElementRef, HostListener, OnInit, Renderer2} from '@angular/core';
 
 @Directive({
   selector: '[appBasicDirective]'
@@ -14,7 +14,15 @@ export class BasicDirectiveDirective implements OnInit {
 
   ngOnInit(): void {
 
+    // this.renderer.setStyle(this.elemRef.nativeElement,'background-color','lightblue');
+  }
+
+  @HostListener('mouseenter') onHoover(){
     this.renderer.setStyle(this.elemRef.nativeElement,'background-color','lightblue');
+  }
+
+  @HostListener('mouseleave') onLeave(){
+    this.renderer.setStyle(this.elemRef.nativeElement,'background-color','transparent');
   }
 
 
