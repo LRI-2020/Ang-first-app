@@ -8,6 +8,7 @@ export class AppComponent {
   @Output('counter') counters: number[];
   evens: number[];
   odds:number[];
+  switchTest:number =15;
 
   constructor() {
     this.evens=[];
@@ -29,6 +30,9 @@ addNumber(value:number){
     this.odds=[]
   }
 
+  setSwitchValue(value:number){
+    this.switchTest=value;
+  }
 
 
 }
