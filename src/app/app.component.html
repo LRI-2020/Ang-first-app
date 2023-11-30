@@ -1,33 +1,35 @@
-<app-game-control (onIntervalFired)="addNumber($event)" (onGameReset)="ResetNumbers()"></app-game-control>
-<div class="row">
-  <div class="col-5">
-    <app-odd *ngFor="let odd of odds" [oddNumber]="odd"></app-odd>
+<app-servers></app-servers>
 
-  </div>
-  <div class="col-5">
-    <app-even *ngFor="let even of evens" [evenNumber]="even"></app-even>
+<!--<app-game-control (onIntervalFired)="addNumber($event)" (onGameReset)="ResetNumbers()"></app-game-control>-->
+<!--<div class="row">-->
+<!--  <div class="col-5">-->
+<!--    <app-odd *ngFor="let odd of odds" [oddNumber]="odd"></app-odd>-->
 
-  </div>
-</div>
+<!--  </div>-->
+<!--  <div class="col-5">-->
+<!--    <app-even *ngFor="let even of evens" [evenNumber]="even"></app-even>-->
+
+<!--  </div>-->
+<!--</div>-->
 
 <!--<app-assignment3></app-assignment3>-->
 
-<app-servers></app-servers>
-
-<div>
-  <h5>This is a ngSwitch test</h5>
-  <div class="row">
-    <button class="col-sm-1 mx-1 btn btn-dark" (click)="setSwitchValue(0)">0</button>
-    <button class="col-sm-1 mx-1 btn btn-dark" (click)="setSwitchValue(5)">5</button>
-    <button class="col-sm-1 mx-1 btn btn-dark" (click)="setSwitchValue(15)">15</button>
-    <button class="col-sm-1 mx-1 btn btn-dark" (click)="setSwitchValue(-1)">default</button>
-  </div>
+<!--<div>-->
+<!--  <h5>This is a ngSwitch test</h5>-->
+<!--  <div class="row">-->
+<!--    <button class="col-sm-1 mx-1 btn btn-dark" (click)="setSwitchValue(0)">0</button>-->
+<!--    <button class="col-sm-1 mx-1 btn btn-dark" (click)="setSwitchValue(5)">5</button>-->
+<!--    <button class="col-sm-1 mx-1 btn btn-dark" (click)="setSwitchValue(15)">15</button>-->
+<!--    <button class="col-sm-1 mx-1 btn btn-dark" (click)="setSwitchValue(-1)">default</button>-->
+<!--  </div>-->
 
 
-  <div [ngSwitch]="switchTest">
-    <p *ngSwitchCase="0">The value is 0</p>
-    <p *ngSwitchCase="5">The value is 5</p>
-    <p *ngSwitchCase="15">The value is 15</p>
-    <p *ngSwitchDefault>The value is default</p>
-  </div>
-</div>
+<!--  <div [ngSwitch]="switchTest">-->
+<!--    <p *ngSwitchCase="0">The value is 0</p>-->
+<!--    <p *ngSwitchCase="5">The value is 5</p>-->
+<!--    <p *ngSwitchCase="15">The value is 15</p>-->
+<!--    <p *ngSwitchDefault>The value is default</p>-->
+<!--  </div>-->
+<!--</div>-->
+
+

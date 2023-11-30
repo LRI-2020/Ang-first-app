@@ -13,6 +13,7 @@ import { OddComponent } from './assignment4/odd/odd.component';
 import { EvenComponent } from './assignment4/even/even.component';
 import { BasicDirectiveDirective } from './directives/basic-directive.directive';
 import { UnlessDirective } from './directives/unless.directive';
+import {CompanyServerService} from "./services/company.server.service";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { UnlessDirective } from './directives/unless.directive';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CompanyServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

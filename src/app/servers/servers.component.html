@@ -5,7 +5,7 @@
     <input  id="serverNameInput" type="text" class="form-control my-1" #serverNameInput>
     <label for="serverStatusInput">Server online : </label>
     <input type="checkbox" id="serverStatusInput" class="form-check my-1" #serverStatusInput>
-    <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer(serverNameInput)">Create Server</button>
+    <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Create Server</button>
     <div class="">
       <p *ngIf="serverCreated;"> {{serverCreationStatus}}</p>
       <p *appUnless="!serverCreated">{{serverCreationStatus}}</p>
@@ -16,4 +16,4 @@
 </div>
 
 
-<app-server *ngFor="let server of servers" [serverElement]="{name:server.name,status:server.status,id:server.id}"></app-server>
+<app-server *ngFor="let serv of companyServers" [serverElement]="{name:serv.name,status:serv.status,id:serv.id}"></app-server>
