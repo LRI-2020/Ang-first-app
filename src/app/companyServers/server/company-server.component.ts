@@ -1,6 +1,6 @@
 ﻿import {Component, Input, OnInit} from '@angular/core';
-import {CompanyServerService} from "../services/company.server.service";
-import {CompanyServer} from "../models/company-server.model";
+import {CompanyServerService} from "../../services/company.server.service";
+import {CompanyServer} from "../../models/company-server.model";
 
 @Component({
   selector: 'app-company-server',

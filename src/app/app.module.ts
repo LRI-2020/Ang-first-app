@@ -17,6 +17,8 @@ import {CompanyServersComponent} from "./companyServers/company-servers.componen
 import { CompanyServerNewComponent } from './companyServers/company-server-new/company-server-new.component';
 import {InactiveUsersComponent} from "./users/inactive-users/inactive-users.component";
 import {ActiveUsersComponent} from "./users/active-users/active-users.component";
+import {LusersService} from "./services/lusers.service";
+import { LusersComponent } from './users/lusers/lusers.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +36,14 @@ import {ActiveUsersComponent} from "./users/active-users/active-users.component"
     UnlessDirective,
     CompanyServerNewComponent,
     InactiveUsersComponent,
-    ActiveUsersComponent
+    ActiveUsersComponent,
+    LusersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [CompanyServerService],
+  providers: [CompanyServerService, LusersService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
