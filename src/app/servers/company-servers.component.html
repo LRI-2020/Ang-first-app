@@ -1,19 +1,2 @@
-
-<div class="m-3 row">
-  <div class="col-sm-8">
-    <label for="serverNameInput">Name of server : </label>
-    <input  id="serverNameInput" type="text" class="form-control my-1" #serverNameInput>
-    <label for="serverStatusInput">Server online : </label>
-    <input type="checkbox" id="serverStatusInput" class="form-check my-1" #serverStatusInput>
-    <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Create Server</button>
-    <div class="">
-      <p *ngIf="serverCreated;"> {{serverCreationStatus}}</p>
-      <p *appUnless="!serverCreated">{{serverCreationStatus}}</p>
-    </div>
-  </div>
-
-
-</div>
-
-
-<app-company-server *ngFor="let serv of companyServers" [serverElement]="{name:serv.name,status:serv.status,id:serv.id}"></app-company-server>
+<app-company-server-new></app-company-server-new>
+<app-company-server *ngFor="let serv of companyServers" [serverElement]="serv"></app-company-server>

@@ -14,6 +14,7 @@ import { BasicDirectiveDirective } from './directives/basic-directive.directive'
 import { UnlessDirective } from './directives/unless.directive';
 import {CompanyServerService} from "./services/company.server.service";
 import {CompanyServersComponent} from "./servers/company-servers.component";
+import { CompanyServerNewComponent } from './servers/company-server-new/company-server-new.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {CompanyServersComponent} from "./servers/company-servers.component";
     EvenComponent,
     BasicDirectiveDirective,
     UnlessDirective,
+    CompanyServerNewComponent,
   ],
   imports: [
     BrowserModule,

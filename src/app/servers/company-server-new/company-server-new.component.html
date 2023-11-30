@@ -1,0 +1,13 @@
+<div class="m-3 row">
+  <div class="col-sm-8">
+    <label for="serverNameInput">Name of server : </label>
+    <input  id="serverNameInput" type="text" class="form-control my-1" #serverNameInput>
+    <label for="serverStatusInput">Server online : </label>
+    <input type="checkbox" id="serverStatusInput" class="form-check my-1" #serverStatusInput>
+    <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Create Server</button>
+    <div class="">
+      <p *ngIf="serverCreated;"> {{serverCreationStatus}}</p>
+      <p *appUnless="!serverCreated">{{serverCreationStatus}}</p>
+    </div>
+  </div>
+</div>
