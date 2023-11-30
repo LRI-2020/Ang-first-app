@@ -1,6 +1,6 @@
 ﻿import {v4 as uuidv4} from "uuid";
 
-export class Server{
+export class CompanyServer {
   get status(): boolean {
     return this._status;
   }

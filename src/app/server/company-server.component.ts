@@ -1,7 +1,6 @@
-﻿import {Component, EventEmitter, Injectable, Input, OnInit} from '@angular/core';
-import {NgFor} from "@angular/common";
-import {Server} from "./server.model";
+﻿import {Component, Input, OnInit} from '@angular/core';
 import {CompanyServerService} from "../services/company.server.service";
+import {CompanyServer} from "../models/company-server.model";
 
 @Component({
   selector: 'app-company-server',
@@ -9,7 +8,7 @@ import {CompanyServerService} from "../services/company.server.service";
   styleUrl: './company-server.component.scss'
 })
 export class CompanyServerComponent implements OnInit {
-  @Input() serverElement: { name: string; status: boolean; id: string; };
+  @Input() serverElement: CompanyServer;
 
   constructor(private companyServerService: CompanyServerService) {
   }

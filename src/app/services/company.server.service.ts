@@ -1,11 +1,12 @@
 ﻿import {v4 as uuidv4} from "uuid";
+import {CompanyServer} from "../models/company-server.model";
 
 export class CompanyServerService{
 
-  servers: {name:string,id:string,status:boolean}[] = [];
+  companyServers: CompanyServer[] = [];
 
   CreateServer(name:string,status:boolean) {
-    this.servers.push({name:name, id:uuidv4(), status:status});
+    this.companyServers.push(new CompanyServer(name,status));
   }
 
   ChangeStatus(id:string){
@@ -15,6 +16,6 @@ export class CompanyServerService{
 
 
   private getServerById(id: string) {
-    return this.servers.find(s => s.id === id);
+    return this.companyServers.find(s => s.id === id);
   }
 }

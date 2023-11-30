@@ -1,5 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {CompanyServerService} from "../services/company.server.service";
+import {CompanyServer} from "../models/company-server.model";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class CompanyServersComponent implements OnInit{
   @ViewChild('serverStatusInput') serverStatusInput:ElementRef;
   @ViewChild('serverNameInput') serverNameInput:ElementRef;
   serverCreated = false;
-  companyServers: {name:string,id:string,status:boolean}[] = [];
+  companyServers: CompanyServer[] = [];
 
   constructor(private companyServerService:CompanyServerService) {
     setTimeout(() => {
@@ -37,7 +38,7 @@ export class CompanyServersComponent implements OnInit{
   }
 
   ngOnInit(): void {
-        this.companyServers = this.companyServerService.servers;
+        this.companyServers = this.companyServerService.companyServers;
 
   }
 
