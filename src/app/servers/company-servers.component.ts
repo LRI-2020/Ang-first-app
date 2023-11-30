@@ -3,11 +3,11 @@ import {CompanyServerService} from "../services/company.server.service";
 
 
 @Component({
-  selector: 'app-servers',
-  templateUrl: './servers.component.html',
-  styleUrl: './servers.component.scss'
+  selector: 'app-company-servers',
+  templateUrl: './company-servers.component.html',
+  styleUrl: './company-servers.component.scss'
 })
-export class ServersComponent implements OnInit{
+export class CompanyServersComponent implements OnInit{
 
   allowNewServer = false;
   serverCreationStatus = 'no server was created';

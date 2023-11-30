@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule} from "@angular/forms";
 import { AppComponent } from './app.component';
 import {CompanyServerComponent} from "./server/company-server.component";
-import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './alerts/warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './alerts/success-alert/success-alert.component';
 import { AlertsComponent } from './alerts/alerts.component';
@@ -14,12 +13,13 @@ import { EvenComponent } from './assignment4/even/even.component';
 import { BasicDirectiveDirective } from './directives/basic-directive.directive';
 import { UnlessDirective } from './directives/unless.directive';
 import {CompanyServerService} from "./services/company.server.service";
+import {CompanyServersComponent} from "./servers/company-servers.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     CompanyServerComponent,
-    ServersComponent,
+    CompanyServersComponent,
     WarningAlertComponent,
     SuccessAlertComponent,
     AlertsComponent,
