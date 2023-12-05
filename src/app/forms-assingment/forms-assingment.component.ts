@@ -11,7 +11,7 @@ export class FormsAssingmentComponent {
   @ViewChild('subscriptionForm') subscriptionF:NgForm;
   defaultSubscription ='advanced';
   submitted:boolean=false;
-
+genders=['male','female']
   subscriptionRequest = {
     email:'',
     password:'',

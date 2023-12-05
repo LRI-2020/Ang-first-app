@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AppComponent } from './app.component';
 import {CompanyServerComponent} from "./companyServers/server/company-server.component";
 import { WarningAlertComponent } from './alerts/warning-alert/warning-alert.component';
@@ -22,6 +22,7 @@ import { LusersComponent } from './users/lusers/lusers.component';
 import {RouterModule, Routes} from "@angular/router";
 import { HomeComponent } from './home/home.component';
 import { FormsAssingmentComponent } from './forms-assingment/forms-assingment.component';
+import { ReactiveAssingmentComponent } from './reactive-assingment/reactive-assingment.component';
 
 const appRoutes:Routes=[
   {path:'', component:HomeComponent},
@@ -48,12 +49,14 @@ const appRoutes:Routes=[
     ActiveUsersComponent,
     LusersComponent,
     HomeComponent,
-    FormsAssingmentComponent
+    FormsAssingmentComponent,
+    ReactiveAssingmentComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule
   ],
   providers: [CompanyServerService, LusersService],
   bootstrap: [AppComponent]
