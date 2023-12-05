@@ -19,7 +19,16 @@ import {InactiveUsersComponent} from "./users/inactive-users/inactive-users.comp
 import {ActiveUsersComponent} from "./users/active-users/active-users.component";
 import {LusersService} from "./services/lusers.service";
 import { LusersComponent } from './users/lusers/lusers.component';
+import {RouterModule, Routes} from "@angular/router";
+import { HomeComponent } from './home/home.component';
+import { FormsAssingmentComponent } from './forms-assingment/forms-assingment.component';
 
+const appRoutes:Routes=[
+  {path:'', component:HomeComponent},
+  {path:'servers', component:CompanyServerComponent},
+  {path:'users', component:LusersComponent},
+
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,11 +46,14 @@ import { LusersComponent } from './users/lusers/lusers.component';
     CompanyServerNewComponent,
     InactiveUsersComponent,
     ActiveUsersComponent,
-    LusersComponent
+    LusersComponent,
+    HomeComponent,
+    FormsAssingmentComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [CompanyServerService, LusersService],
   bootstrap: [AppComponent]
