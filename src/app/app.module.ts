@@ -23,6 +23,10 @@ import {RouterModule, Routes} from "@angular/router";
 import { HomeComponent } from './home/home.component';
 import { FormsAssingmentComponent } from './forms-assingment/forms-assingment.component';
 import { ReactiveAssingmentComponent } from './reactive-assingment/reactive-assingment.component';
+import { PipeAssignmentComponent } from './pipe-assignment/pipe-assignment.component';
+import { FilterPipe } from './pipe-assignment/filter.pipe';
+import { ShortenPipe } from './pipe-assignment/shorten.pipe';
+import { ReversePipe } from './pipe-assignment/reverse.pipe';
 
 const appRoutes:Routes=[
   {path:'', component:HomeComponent},
@@ -50,7 +54,11 @@ const appRoutes:Routes=[
     LusersComponent,
     HomeComponent,
     FormsAssingmentComponent,
-    ReactiveAssingmentComponent
+    ReactiveAssingmentComponent,
+    PipeAssignmentComponent,
+    FilterPipe,
+    ShortenPipe,
+    ReversePipe
   ],
   imports: [
     BrowserModule,
