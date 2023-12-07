@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './pipe-assignment.component.scss'
 })
 export class PipeAssignmentComponent {
+  sortingOrder:string='0';
+  sortingProperty:string='status';
+
   appStatus = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve('stable');
@@ -16,25 +19,25 @@ export class PipeAssignmentComponent {
       instanceType: 'medium',
       name: 'Production',
       status: 'stable',
-      started: new Date(15, 1, 2017)
+      started: new Date(2017, 1, 15)
     },
     {
       instanceType: 'large',
       name: 'User Database',
       status: 'stable',
-      started: new Date(15, 1, 2017)
+      started: new Date(2018, 1, 15)
     },
     {
       instanceType: 'small',
       name: 'Development Server',
       status: 'offline',
-      started: new Date(15, 1, 2017)
+      started: new Date(2018, 5, 1)
     },
     {
       instanceType: 'small',
       name: 'Testing Environment Server',
       status: 'stable',
-      started: new Date(15, 1, 2017)
+      started: new Date(2018, 5, 5)
     }
   ];
   filteredStatus = '';

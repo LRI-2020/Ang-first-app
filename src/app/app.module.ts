@@ -27,6 +27,7 @@ import { PipeAssignmentComponent } from './pipe-assignment/pipe-assignment.compo
 import { FilterPipe } from './pipe-assignment/filter.pipe';
 import { ShortenPipe } from './pipe-assignment/shorten.pipe';
 import { ReversePipe } from './pipe-assignment/reverse.pipe';
+import { SortPipe } from './pipe-assignment/sort.pipe';
 
 const appRoutes:Routes=[
   {path:'', component:HomeComponent},
@@ -58,7 +59,8 @@ const appRoutes:Routes=[
     PipeAssignmentComponent,
     FilterPipe,
     ShortenPipe,
-    ReversePipe
+    ReversePipe,
+    SortPipe
   ],
   imports: [
     BrowserModule,

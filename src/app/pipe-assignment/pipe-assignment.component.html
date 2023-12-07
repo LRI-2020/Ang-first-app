@@ -1,7 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <label>Filter : </label>
       <input type="text" [(ngModel)]="filteredStatus">
+      <label> Sorting By</label>
+      <select [(ngModel)]="sortingProperty">
+        <option value="status">Status</option>
+        <option value="name">Name</option>
+        <option value="instanceType">Instance Type</option>
+        <option value="started">Started at</option>
+      </select>
+      <label> Sorting Order</label>
+      <label for='asc'> Ascending</label>
+      <input type="radio" id='asc' name='sortingOrder' value="1" [(ngModel)]="sortingOrder">
+      <label for='desc'> Descending</label>
+      <input type="radio" id='desc' name='sortingOrder' value="0" [(ngModel)]="sortingOrder">
+
       <br>
       <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
       <br><br>
@@ -10,7 +24,7 @@
       <ul class="list-group">
         <li
           class="list-group-item"
-          *ngFor="let server of servers | filter:filteredStatus:'status'"
+          *ngFor="let server of servers | filter:filteredStatus:'status'|sort:(sortingOrder==='1'):sortingProperty"
           [ngClass]="getStatusClasses(server)">
           <span
             class="badge">
